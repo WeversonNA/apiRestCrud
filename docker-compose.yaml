@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   mysqldb:
@@ -6,18 +6,16 @@ services:
     restart: always
     # env_file: ./.env
     environment:
-      MYSQL_ROOT_PASSWORD: '123456'
-      MYSQL_DATABASE: 'petshop'
-      MYSQL_TCP_PORT: '3306'
+      MYSQL_ROOT_PASSWORD: "123456"
+      MYSQL_DATABASE: "petshop"
+      MYSQL_TCP_PORT: "3306"
     ports:
-      - '3306:3306'
+      - "3306:3306"
     volumes:
       - db-config:/etc/mysql
       - db-data:/var/lib/mysql
       - ./db/backup/files/:/data_backup/data
 
-
 volumes:
   db-config:
   db-data:
- 
